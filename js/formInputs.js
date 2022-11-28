@@ -26,8 +26,10 @@ let l = 999;
           <option value="incorrect" class="text-danger">Incorrect ✕</option>
       </select>
       <img src="./../assests/icons/CounterMinus.svg" class="optionRemove">
-       <div id="error-question${l}a-choose" class="text-danger"></div>
-  </div>`
+       
+  </div>
+  <div id="error-question${l}a-choose" class="text-danger"></div>
+  `
       $(this).parent().parent().before(divv);
       l++;
       removeOption()
