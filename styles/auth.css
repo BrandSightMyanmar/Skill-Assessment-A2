@@ -1,0 +1,47 @@
+.form-side-header {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 47px;
+    letter-spacing: -0.02em;
+}
+
+.form-side-sub-header {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: center;
+}
+
+.form-side-footer {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+.form-side-sub-footer {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 12px;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+.form-footer-heading {
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 14px;
+    letter-spacing: 0.03em;
+    text-align: left;
+}
+
+.form-footer-body {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 12px;
+    letter-spacing: 0.03em;
+    text-align: left;
+}

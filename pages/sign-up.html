@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./../assests/img/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https:/fonts.googleapis.com/css?family=Work+Sans">
+    <link rel="stylesheet" href="./../styles/main.css">
+    <link rel="stylesheet" href="./../styles/auth.css">
+    <link rel="stylesheet" href="./../styles/formInputs.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./../styles/bootstrap.css">
+    <link rel="stylesheet" href="./../styles/phonenumber.css">
+    <script src="./../js/bootstrap.bundle.js"></script>
+
+    <!-- Jquery -->
+    <script src="./../js/jquery.js"></script>
+
+    <title>Sign up</title>
+</head>
+<style>
+    .pn-select * {
+        background-color: transparent !important;
+    }
+</style>
+<body>
+    <main class="w-100 position-relative" style="min-height: 100vh;">
+        <!-- Left Green Section -->
+        <section class="w-50 position-absolute primary-bg-auth h-100" style="left: 0; z-index: 2;">
+            <img src="./../assests/img/logo.svg" class="m-2" alt="">
+        </section>
+
+        <section class="w-50 position-absolute h-100" style="left: 0; z-index: 4;">
+            <div class="text-white d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
+                <div class="form-side-header mt-2">Already Signed Up?</div>
+                <div style="max-width: 381px; font-weight: 600;" class="form-side-sub-header mt-2 text-dark">Click here and access your employer portal
+                    and find the right matches for your workplace with ease!</div>
+                <a href="login.html"><button class="button button-bg-white mt-2"> LOG IN </button></a>
+                <div class="form-side-footer mt-2">Problem signing up?</div>
+                <div class="form-side-sub-footer mt-2"><a href="#" class="text-white">Reset Password</a> OR Call our
+                    support line:
+                    <a href="tel:+923333217934" class="text-white">+923333217934</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form Section -->
+        <section class="w-50 container p-3 mb-3 position-absolute h-100"
+            style="right: 0; overflow-y: auto; z-index: 4;">
+            <!-- Headers -->
+            <h1 class="form-header primary-txt text-center">Employer Sign Up</h1>
+            <h2 class="form-sub-header primary-txt text-center">*No credit card required</h2>
+
+            <!-- Form -->
+            <form action="login.html" class="m-auto" style="max-width: 520px;">
+                <!-- Image input -->
+                <div class="form-group d-flex flex-column align-items-center">
+                    <label for="logo" style="cursor: pointer;"><img src="./../assests/img/img_symbol.svg" width="70" id="displayLogo" style="border: 2px solid #03a12b; border-radius: 4px; padding: 6px;"></label>
+                    <p class="label-form">CHOOSE COMPANY LOGO FROM <a href=""
+                            class="font-decoration-none primary-txt"><input class="d-none" accept="image/*" type="file" name="logo"
+                                id="logo"><label for="logo" style="cursor: pointer;">GALLERY</label></a></p>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Company name" class="form-control form-control-auth"
+                        name="companyName">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Company Email" class="form-control form-control-auth"
+                        name="companyEmail">
+                </div>
+
+                <!-- Phone number -->
+                <div class="pn-select form-group w-100" id="js_pn-select" style="--prefix-length: 2;">
+                    <!-- Selected prefix -->
+                    <button type="button" class="pn-selected-prefix" aria-label="Select phonenumber prefix" id="js_trigger-dropdown"
+                        tabindex="1">
+                        <img class="pn-selected-prefix__flag" id="js_selected-flag"
+                            src="https://flagpedia.net/data/flags/icon/36x27/nl.png" />
+                        <!-- prettier-ignore -->
+                        <svg class="pn-selected-prefix__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="#081626" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <!-- Phone number input -->
+                    <div class="pn-input" >
+                        <div class="pn-input__container">
+                            <input class="pn-input__prefix phoneNumber" value="+31" type="text" name="phonenumber-prefix"
+                                id="js_number-prefix" tabindex="-1"/>
+                            <input class="pn-input__phonenumber" id="js_input-phonenumber" type="number" name="phonenumber"
+                                pattern="\d*" value="" placeholder=" " autocomplete="nope" max="10"
+                                tabindex="0" />
+                        </div>
+                    </div>
+                    <!-- Dropdown -->
+                    <div class="pn-dropdown" id="js_dropdown">
+                        <div class="pn-search">
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </div>
+                        <!-- Country list -->
+                        <ul class="pn-list list" style="background-color: white !important;" id="js_list"></ul>
+                    </div>
+                </div>
+
+                <!-- City -->
+                <div class="form-group">
+                    <select name="city" class="form-select form-control-auth">
+                        <option selected disabled>City</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+
+                <!-- Area -->
+                <div class="form-group">
+                    <select name="area" class="form-select form-control-auth">
+                        <option selected disabled>Area</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+
+                <!-- Address -->
+                <div class="form-group">
+                    <textarea name="address" cols="30" rows="3" placeholder="Address"
+                        class="form-control form-control-auth"></textarea>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group d-flex">
+                    <div class="input-group">
+                        <input type="password" placeholder="Password" class="form-control input-group-form-control form-control-auth"
+                        name="password" id="password">
+                        <span class="input-group-text"><img onclick="passwordToggle('password')" id="passwordEye" src="./../assests/icons/eye.png" width="20"></span>
+                    </div>
+                    <div class="input-group ms-2">
+                        <input type="password" placeholder="Confirm Password" class="form-control input-group-form-control form-control-auth"
+                        name="confirmPassword" id="confirmPassword">
+                        <span class="input-group-text"><img onclick="passwordToggle('confirmPassword')" id="confirmPasswordEye" src="./../assests/icons/eye.png" width="20"></span>
+                    </div>
+                </div>
+
+                <!-- Submit -->
+                <div class="form-group">
+                    <button type="submit" class="button button-bg-green">
+                        CONTINUE </button>
+                </div>
+            </form>
+        </section>
+        <div class="position-absolute fixed-bottom m-auto" style="z-index: 3;">
+            <img src="./../assests/img/logo_bg.svg" width="80%" style="margin-left: 13%;">
+        </div>
+    </main>
+
+</body>
+<script src="./../js/list.min.js"></script>
+<script src="./../js/phoneNumber.js"></script>
+<script src="./../js/togglePassword.js"></script>
+<script src="./../js/sign-up.js"></script>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./../assests/img/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans">
+    <link rel="stylesheet" href="./../styles/main.css">
+    <link rel="stylesheet" href="./../styles/auth.css">
+    <link rel="stylesheet" href="./../styles/formInputs.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./../styles/bootstrap.css">
+    <script src="./../js/bootstrap.bundle.js"></script>
+
+    <!-- Jquery -->
+    <script src="./../js/jquery.js"></script>
+
+    <title>Login</title>
+</head>
+
+<body>
+    <main class="w-100 position-relative" style="min-height: 100vh;">
+        <!-- Left Green Section -->
+        <section class="w-50 position-absolute primary-bg-auth h-100" style="left: 0; z-index: 2;">
+            <img src="./../assests/img/logo.svg" class="m-2" alt="">
+        </section>
+
+        <section class="w-50 position-absolute h-100" style="left: 0; z-index: 4;">
+            <div class="text-white d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
+                <div class="form-side-header mt-2">Haven't Signed Up?</div>
+                <div style="width: 522px;" class="form-side-sub-header mt-2 text-dark">*No credit card required</div>
+                <a href="sign-up.html"><button class="button button-bg-white mt-3 px-4">
+                        Create Account </button></a>
+            </div>
+        </section>
+
+        <!-- Form Section -->
+        <section
+            class="w-50 container p-3 mb-2 position-absolute h-100 d-flex flex-column justify-content-center align-items-center"
+            style="right: 0; overflow-y: auto; z-index: 4;">
+
+            <!-- Form -->
+            <form action="home.html" class="m-auto" style="width: 520px;">
+                <!-- Header -->
+                <h1 class="mb-4 form-header primary-txt text-center">Employer Login</h1>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <input type="text" placeholder="Company Email" class="form-control form-control-auth"
+                        name="companyEmail">
+                </div>
+
+                <!-- Password -->
+                <div class="input-group mt-4">
+                    <input type="password" placeholder="Password" class="form-control input-group-form-control form-control-auth"
+                    name="password" id="password">
+                    <span class="input-group-text"><img onclick="passwordToggle('password')" id="passwordEye" src="./../assests/icons/eye.png" width="20"></span>
+                </div>
+
+                <!-- Form Footer -->
+                <div class="form-footer-heading mt-3">
+                    Problem signing up?
+                </div>
+                <div class="form-footer-body mt-2">
+                    <a href="" class="primary-txt">Reset Password</a> OR Call our support <br><br>
+                    line: <a href="tel:+923333217934" class="primary-txt">+923333217934</a>
+                </div>
+
+                <!-- Login button -->
+                <div class="form-group">
+                    <button type="submit" class="button button-bg-green">
+                        LOGIN </button>
+                </div>
+            </form>
+        </section>
+        <div class="position-absolute fixed-bottom m-auto" style="z-index: 3;">
+            <img src="./../assests/img/logo_bg.svg" width="80%" style="margin-left: 13%;">
+        </div>
+    </main>
+
+</body>
+<script src="./../js/togglePassword.js"></script>
+</html>

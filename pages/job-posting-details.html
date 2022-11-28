@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./../assests/img/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans">
+    <link rel="stylesheet" href="./../styles/main.css">
+    <link rel="stylesheet" href="./../styles/formInputs.css">
+    <link rel="stylesheet" href="./../styles/phonenumber.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./../styles/bootstrap.css">
+    <script src="./../js/bootstrap.bundle.js"></script>
+
+    <!-- Jquery -->
+    <script src="./../js/jquery.js"></script>
+
+    <title>Job Posting Details</title>
+</head>
+
+<body>
+    <!-------------------------------- Header -------------------------------->
+    <header class="secondary-bg px-5">
+        <div class="d-flex align-items-center">
+            <a href="home.html"><img src="./../assests/img/logo.svg" class="m-2" alt="site_logo" height="41"></a>
+            <div style="margin-left: 70px;">
+                <div class="ms-5 sub-title" id="sub-title"></div>
+                <div class="ms-5 sub-title-2" id="sub-title-2"></div>
+            </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-center third-bg" style="border-radius: 3px;">
+            <img src="./../assests/img/img_symbol.svg" alt="profile_picture" width="40">
+            <p class="text-white px-5 mt-2">Foodpanda</p>
+        </div>
+    </header>
+
+    <!-------------------------------- Main -------------------------------->
+    <main class="d-flex">
+        <!------- Side Bar ------->
+        <section class="side-bar primary-bg">
+            <div class="steps container p-3">
+                <!-- STEPS -->
+                <div class="step-header mb-3">STEPS</div>
+                <div class="step-body">
+                    <div class="show-progress-bar d-flex align-items-center">
+                        <div class="step-header" id="progress-percent-show"></div>
+                        <div class="progress-bar-parent ms-2">
+                            <div class="progressBar" id="progress-bar-width"></div>
+                        </div>
+                    </div>
+                    <div class="step-txts">
+                        <div class="form-group mt-2">
+                            <div class="form-check">
+                                <input class="form-check-input step" type="checkbox" id="jobDetails" disabled>
+                                <label class="form-check-label" for="jobDetails">
+                                    Job Details
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input step" type="checkbox" id="screeningQuestion" disabled>
+                                <label class="form-check-label" for="screeningQuestion">
+                                    Screening Question
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input step" type="checkbox" id="pointOfContact" disabled>
+                                <label class="form-check-label" for="pointOfContact">
+                                    Point of Contact
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input step" type="checkbox" id="employmentContract" disabled>
+                                <label class="form-check-label" for="employmentContract">
+                                    Employment Contract
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Section -->
+        <section class="main p-3 container">
+            <!-- Form -->
+            <form action="home.html" name="newJobForm" id="newJobForm" method="get">
+                <div id="slider" class="form">
+                    <!-- ul -->
+                    <ul class="ul">
+
+                        <!-- First Page -->
+                        <li class="li">
+                            <!-- Form Title 1 -->
+                            <label for="jobType" class="label-job-form">Job Type</label>
+                            <!-- Job Type Input -->
+                            <div class="form-group d-flex mt-2">
+                                <div>
+                                    <input class="btn-check" id="placement" type="radio" name="jobType"
+                                        value="placement">
+                                    <label for="placement"
+                                        class="check-box-btn check-box-btn-left btn-outline-check-box">Placement</label>
+                                </div>
+                                <div>
+                                    <input class="btn-check" id="sourcing" type="radio" name="jobType" value="sourcing"
+                                        checked>
+                                    <label for="sourcing"
+                                        class="check-box-btn check-box-btn-right btn-outline-check-box">Sourcing</label>
+                                </div>
+                            </div>
+
+                            <!-- Form Title 2 -->
+                            <label for="jobType" class="label-job-form mt-3">Tell us about the Job</label>
+                            <div class="mt-2">
+                                <!-- Job Title input & error -->
+                                <input required class="form-control mt-2 w-50" type="text" placeholder="Job Title"
+                                    err-id="error-job-title" data-msg="Job Title is required." name="jobTitle" id="jobTitle">
+                                <div class="text-danger" style="font-size: 12px;" id="error-job-title"></div>
+
+                                <!-- Job City select & error -->
+                                <select class="form-select form-select-bg-normal mt-2 w-50" name="jobCity"
+                                    style="width: 155px;" err-id="error-job-city" id="job-city" required
+                                    data-msg="Job City must be selected.">
+                                    <option selected disabled>City</option>
+                                    <option value="abbottabad">Abbottabad</option>
+                                    <option value="badin">Badin</option>
+                                    <option value="chaman">Chaman</option>
+                                    <option value="daharki">Daharki</option>
+                                </select>
+                                <div class="text-danger" style="font-size: 12px;" id="error-job-city"></div>
+
+                                <!-- Job Area select & error -->
+                                <select class="form-select form-select-bg-normal mt-2 w-50" name="jobArea"
+                                    style="width: 155px;" err-id="error-job-area" id="job-area" required
+                                    data-msg="Job Area must be selected.">
+                                    <option selected disabled>Area</option>
+                                    <option value="community">Community</option>
+                                    <option value="rural">Rural</option>
+                                    <option value="suburb">Suburb</option>
+                                    <option value="suburban">Suburban</option>
+                                    <option value="urban">Urban</option>
+                                </select>
+                                <div class="text-danger" style="font-size: 12px;" id="error-job-area"></div>
+
+                                <!-- Job Category input & error -->
+                                <select class="form-select form-select-bg-normal mt-2 w-50" name="jobCategory"
+                                    style="width: 155px;" err-id="error-job-category" required
+                                    data-msg="Job Category must be selected.">
+                                    <option selected disabled>Category</option>
+                                    <option value="account,finance">Account, Finance</option>
+                                    <option value="logistics,delivery">Logistics, Delivery</option>
+                                    <option value="softwareAndWeb">Software And Web</option>
+                                    <option value="others">Others</option>
+                                </select>
+                                <div class="text-danger" style="font-size: 12px;" id="error-job-category"></div>
+
+                                <!-- Job Description Textarea & error -->
+                                <textarea class="form-control mt-2 w-50" cols="3" placeholder="Job Description"
+                                    style="width: 550px;" required data-msg="Job Description is required." name="jobDescription"
+                                    err-id="error-job-description"></textarea>
+                                <div class="text-danger" style="font-size: 12px;" id="error-job-description"></div>
+                            </div>
+
+                            <!-- Form Title 3 -->
+                            <label for="Type of Job" class="label-job-form mt-3">Type of Job</label>
+                            <!-- Type of Job radio input & error -->
+                            <div class="form-group d-flex mt-2">
+                                <div>
+                                    <input class="btn-check" id="fullTime" type="radio" name="typeOfJob"
+                                        value="fullTime" checked>
+                                    <label for="fullTime"
+                                        class="check-box-btn check-box-btn-left btn-outline-check-box">Full
+                                        Time</label>
+                                </div>
+                                <div>
+                                    <input class="btn-check" id="partTime" type="radio" name="typeOfJob"
+                                        value="partTime">
+                                    <label for="partTime"
+                                        class="check-box-btn check-box-btn-right btn-outline-check-box">Part
+                                        Time</label>
+                                </div>
+                            </div>
+
+                            <!-- Salary inputs and error -->
+                            <label class="label-job-form mt-3">Salary</label>
+                            <div class="form-group d-flex mt-2">
+                                <div>
+                                    <input class="check-box-btn form-control check-box-btn-left btn-outline-check-box"
+                                        id="minSalary" salaries type="text" name="minSalary" placeholder="minimum"
+                                        required data-msg="Minimum salary is required." err-id="error-job-salary" salary>
+                                </div>
+                                <div>
+                                    <input class="check-box-btn form-control check-box-btn-right btn-outline-check-box"
+                                        id="maxSalary" type="text" name="maxSalary" placeholder="maximum" required
+                                        err-id="error-job-salary" data-msg="Maximum salary is required." salary>
+                                </div>
+                            </div>
+                            <div class="text-danger" style="font-size: 12px;" id="error-job-salary"></div>
+
+                            <!-- Shift radio input -->
+                            <label class="label-job-form mt-3">Shift</label>
+                            <div class="form-group d-flex mt-2">
+                                <div>
+                                    <input class="btn-check" id="dayShift" type="radio" name="shift" value="dayShift"
+                                        checked>
+                                    <label for="dayShift"
+                                        class="check-box-btn check-box-btn-left btn-outline-check-box">Day
+                                        shift</label>
+                                </div>
+                                <div>
+                                    <input class="btn-check" id="nightShift" type="radio" name="shift"
+                                        value="nightShift">
+                                    <label for="nightShift"
+                                        class="check-box-btn check-box-btn-mid btn-outline-check-box">Night
+                                        shift</label>
+                                </div>
+                                <div>
+                                    <input class="btn-check" id="both" type="radio" name="shift" value="both">
+                                    <label for="both"
+                                        class="check-box-btn check-box-btn-right btn-outline-check-box">Both</label>
+                                </div>
+                            </div>
+
+                            <!-- Experience radio input -->
+                            <label class="label-job-form mt-3">Experience Required</label>
+                            <div class="form-group d-flex mt-2">
+                                <div>
+                                    <input class="btn-check" id="fresher" type="radio" name="experienceRequired"
+                                        value="fresher" checked>
+                                    <label for="fresher"
+                                        class="check-box-btn check-box-btn-left btn-outline-check-box">Fresher</label>
+                                </div>
+                                <div>
+                                    <input class="btn-check" id="experienced" type="radio" name="experienceRequired"
+                                        value="experienced">
+                                    <label for="experienced"
+                                        class="check-box-btn mb-2 check-box-btn-right btn-outline-check-box">Experienced</label>
+                                    <br>
+                                    <div id="numberOfYears" class="d-none">No of Years Experience</div>
+                                    <input class="numberstyle" id="requiredExperienceYears" disabled type="text" min="1"
+                                        step="1" value="1" max="50">
+                                </div>
+                            </div>
+
+                            <!-- Gender radio input -->
+                            <label class="label-job-form mt-3">Gender</label>
+                            <div class="form-group d-flex mt-2">
+                                <div>
+                                    <input class="btn-check" id="male" type="radio" name="gender" value="male" checked>
+                                    <label for="male"
+                                        class="check-box-btn check-box-btn-left btn-outline-check-box">Male</label>
+                                </div>
+                                <div>
+                                    <input class="btn-check" id="female" type="radio" name="gender" value="female">
+                                    <label for="female"
+                                        class="check-box-btn check-box-btn-right btn-outline-check-box">Female</label>
+                                </div>
+                            </div>
+
+                            <!-- Education radio input -->
+                            <label class="label-job-form mt-3">Education</label>
+                            <div class="form-group d-flex mt-2">
+                                <div>
+                                    <input class="btn-check" id="none" type="radio" name="education" value="none">
+                                    <label for="none"
+                                        class="check-box-btn check-box-btn-left btn-outline-check-box">None</label>
+                                </div>
+                                <div>
+                                    <input class="btn-check" id="matric" type="radio" name="education" value="matric">
+                                    <label for="matric"
+                                        class="check-box-btn check-box-btn-mid btn-outline-check-box">Matric</label>
+                                </div>
+                                <div>
+                                    <input class="btn-check" id="inter" type="radio" name="education" value="inter">
+                                    <label for="inter"
+                                        class="check-box-btn check-box-btn-mid btn-outline-check-box btn btn-outlined-danger">Inter</label>
+                                </div>
+                                <div>
+                                    <input class="btn-check" id="university" type="radio" name="education"
+                                        value="university" checked>
+                                    <label for="university"
+                                        class="check-box-btn check-box-btn-right btn-outline-check-box">University</label>
+                                </div>
+                            </div>
+
+                            <!-- Languages checkbox input -->
+                            <label class="label-job-form mt-3">Languages</label>
+                            <div class="form-group mt-2 ms-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="urdu" id="urdu" name="language">
+                                    <label class="form-check-label" for="urdu">
+                                        Urdu
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="english" id="english" name="language">
+                                    <label class="form-check-label" for="english">
+                                        English
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="punjabi" id="punjabi" name="language">
+                                    <label class="form-check-label" for="punjabi">
+                                        Punjabi
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Sindhi" id="Sindhi" name="language">
+                                    <label class="form-check-label" for="Sindhi">
+                                        Sindhi
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Pashto" id="Pashto" name="language">
+                                    <label class="form-check-label" for="Pashto">
+                                        Pashto
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="balochi" id="balochi" name="language">
+                                    <label class="form-check-label" for="balochi">
+                                        Balochi
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Number of Job opening input -->
+                            <label class="label-job-form mt-3">Number of Job Openings</label>
+                            <input class="numberstyle" disabled type="text" min="1" step="1" value="1" name="numberOfJobOpenings">
+
+                        </li>
+
+                        <!-- Second Page -->
+                        <li class="li">
+                            <div class="details2-actions d-flex mt-2">
+                                <div class="details2-action">
+                                    YES/NO <img onclick="addQuestion(1)" class="ms-2"
+                                        src="./../assests/icons/CounterPlus.svg">
+                                </div>
+                                <div class="ms-2 details2-action">
+                                    MULTIPLE CHOICE <img onclick="addQuestion(2)" class="ms-2"
+                                        src="./../assests/icons/CounterPlus.svg">
+                                </div>
+                                <div class="ms-2 details2-action">
+                                    MULTIPLE SELECTION <img onclick="addQuestion(3)" class="ms-2"
+                                        src="./../assests/icons/CounterPlus.svg">
+                                </div>
+                            </div>
+
+                            <!-- Questions -->
+                            <div id="questions">
+                                <input type="hidden" name="questionNumber" id="questionNumber" value="2" required questionsNumber data-msg="At least 1 Question is required" err-id="error-question-number">
+                                <div id="error-question-number" class="text-danger"></div>
+                                <!-- YES/NO Question -->
+                                <div class="question shadow mt-3" questionID="1">
+                                    <div
+                                        class="question-header border-secondary border-bottom d-flex align-items-center justify-content-between">
+                                        <section class="d-flex p-2">
+                                            <div class="question-id">
+                                                QUESTION <span id="question-id" class="question-ID">1</span> -
+                                            </div>
+                                            <div id="question-type">
+                                                YES/NO
+                                            </div>
+                                        </section>
+                                        <section class="mb-2">
+                                            <div class="m-auto ms-5">Points</div>
+                                            <div class="d-flex">
+                                                <input class="numberstyle" disabled type="text" min="1" step="1"
+                                                    value="1" max="10" name="counterMinus1">
+                                                <img class="ms-2 deleteQuestion" src="./../assests/icons/CounterMinus.svg">
+                                            </div>
+                                        </section>
+                                    </div>
+
+                                    <div class="question-body mt-2 mb-4">
+                                        <input type="text" class="form-control" style="font-size: 15px;" name="question"
+                                            placeholder="Enter your question here" required err-id="error-question0" data-msg="Question must be filled">
+                                            <div id="error-question0" class="text-danger"></div>
+                                        <p class="input-guide">
+                                            SELECT THE CORRECT ANSWER</p>
+
+                                        <section class="options">
+                                            <div class="answerWithOptions d-flex">
+                                                <input type="text" disabled value="YES" class="form-control" name="optionQuestion">
+                                                <select class="form-select mx-3" name="answer" style="width: 155px;" required data-msg="Correctness state must be chosen." err-id="error-question0a-choose">
+                                                    <option selected disabled>Choose</option>
+                                                    <option value="correct" class="text-success">Correct ✓</option>
+                                                    <option value="incorrect" class="text-danger">Incorrect ✕</option>
+                                                </select>
+                                                <img src="./../assests/icons/CounterMinus.svg">
+                                            </div>
+                                            <div id="error-question0a-choose" class="text-danger"></div>
+                                            <div class="answerWithOptions mt-2 d-flex">
+                                                <input type="text" disabled value="NO" class="form-control" name="optionQuestion1">
+                                                <select class="form-select mx-3" name="answer1" style="width: 155px;" required data-msg="Correctness state must be chosen." err-id="error-question0b-choose">
+                                                    <option selected disabled>Choose</option>
+                                                    <option value="correct" class="text-success">Correct ✓</option>
+                                                    <option value="incorrect" class="text-danger">Incorrect ✕</option>
+                                                </select>
+                                                <img src="./../assests/icons/CounterMinus.svg">
+                                            </div>
+                                            <div id="error-question0b-choose" class="text-danger"></div>
+                                        </section>
+                                    </div>
+                                </div>
+
+                                <!-- Multiple Choice Question -->
+                                <div class="question shadow mt-3" questionID="2">
+                                    <div
+                                        class="question-header border-secondary border-bottom d-flex align-items-center justify-content-between">
+                                        <section class="d-flex p-2">
+                                            <div class="question-id">
+                                                QUESTION <span id="question-id" class="question-ID">2</span> -
+                                            </div>
+                                            <div id="question-type">
+                                                MULTIPLE CHOICE
+                                            </div>
+                                        </section>
+                                        <section class="mb-2">
+                                            <div class="m-auto ms-5">Points</div>
+                                            <div class="d-flex">
+                                                <input class="numberstyle" disabled type="text" min="1" step="1"
+                                                    value="1" max="10" name="quantity">
+                                                <img class="ms-2 deleteQuestion" src="./../assests/icons/CounterMinus.svg">
+                                            </div>
+                                        </section>
+                                    </div>
+
+                                    <div class="question-body mt-2 mb-4">
+                                        <input type="text" class="form-control" style="font-size: 15px;" name="question2"
+                                            placeholder="Enter your question here" required err-id="error-question1" data-msg="Question must be filled">
+                                            <div id="error-question1" class="text-danger"></div>
+                                        <p class="input-guide">
+                                            SELECT THE CORRECT ANSWER</p>
+
+                                            <section class="options">
+                                                <div class="answerWithOptions mt-2 d-flex">
+                                                    <input type="text" class="form-control" name="optionQuestion2">
+                                                    <select class="form-select mx-3" name="answer3" style="width: 155px;" required data-msg="Correctness state must be chosen." err-id="error-question1a-choose">
+                                                        <option selected disabled>Choose</option>
+                                                        <option value="correct" class="text-success">Correct ✓</option>
+                                                        <option value="incorrect" class="text-danger">Incorrect ✕</option>
+                                                    </select>
+                                                    <img src="./../assests/icons/CounterMinus.svg" class="optionRemove">
+                                                </div>
+                                                <div id="error-question1a-choose" class="text-danger"></div>
+                                                <div class="answerWithOptions mt-2 d-flex">
+                                                    <input type="text" class="form-control" name="optionQuestion3">
+                                                    <select class="form-select mx-3" name="answer4" style="width: 155px;" required data-msg="Correctness state must be chosen." err-id="error-question1b-choose">
+                                                        <option selected disabled>Choose</option>
+                                                        <option value="correct" class="text-success">Correct ✓</option>
+                                                        <option value="incorrect" class="text-danger">Incorrect ✕</option>
+                                                    </select>
+                                                    <img src="./../assests/icons/CounterPlus.svg"  class="optionAdd">
+                                                </div>
+                                                <div id="error-question1b-choose" class="text-danger"></div>
+                                            </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Third Page -->
+                        <li class="li">
+                            <!-- Message on WhatsApp checkbox -->
+                            <div class="form-check ms-2">
+                                <input type="checkbox" name="messageWhatsapp" class="form-check-input"
+                                    id="messageWhatsapp">
+                                <label for="messageWhatsapp" class="form-check-label">Let applicants message you on
+                                    WhatsApp
+                                    directly. Employers get <b>2x</b> more candidates when there is engagement. </label>
+                            </div>
+
+                            <!-- Interviewer's name input & error -->
+                            <input type="text" class="form-control mt-2 w-50" placeholder="Interviewer's Name" required
+                                err-id="error-interviewer-name" data-msg="Interviewer Name is required." name="interviewerName">
+                            <div class="text-danger" style="font-size: 12px;" id="error-interviewer-name"></div>
+
+                            <!-- Phone number -->
+                            <div class="pn-select form-group w-50" id="js_pn-select" style="--prefix-length: 2">
+                                <!-- Selected prefix -->
+                                <button type="button" class="pn-selected-prefix" aria-label="Select phonenumber prefix"
+                                    id="js_trigger-dropdown" tabindex="1">
+                                    <img class="pn-selected-prefix__flag" id="js_selected-flag"
+                                        src="https://flagpedia.net/data/flags/icon/36x27/nl.png" />
+                                    <!-- phone prefix icon -->
+                                    <svg class="pn-selected-prefix__icon" xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="#081626" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                </button>
+                                <!-- Phone number input -->
+                                <div class="pn-input">
+                                    <div class="pn-input__container">
+                                        <input class="pn-input__prefix phoneNumber" value="+31" type="text"
+                                            name="phonenumber-prefix" id="js_number-prefix" tabindex="-1" />
+                                        <input class="pn-input__phonenumber" id="js_input-phonenumber" type="number"
+                                            name="phonenumber" pattern="\d*" value="" placeholder=" "
+                                            autocomplete="nope" required max="10" tabindex="0" />
+                                    </div>
+                                </div>
+                                <!-- Country Dropdown -->
+                                <div class="pn-dropdown" id="js_dropdown">
+                                    <!-- Country list -->
+                                    <ul class="pn-list list" id="js_list"></ul>
+                                </div>
+                            </div>
+
+                            <!-- Input Email -->
+                            <input type="email" class="form-control mt-2 w-50" placeholder="Email Address" required
+                                err-id="error-email-address" data-msg="Email Address is required." name="email">
+                            <div class="text-danger" style="font-size: 12px;" id="error-email-address"></div>
+
+                            <label class="label-job-form mt-3">Work Place Address</label>
+                            <div class="form-group mt-2">
+                                <!-- Select job city -->
+                                <select class="form-select form-select-bg-normal mt-2 w-50" name="jobCity2"
+                                     err-id="error-job-city-2" id="job-city-2" required
+                                    data-msg="Job City is required.">
+                                    <option selected disabled>City</option>
+                                    <option value="abbottabad">Abbottabad</option>
+                                    <option value="badin">Badin</option>
+                                    <option value="chaman">Chaman</option>
+                                    <option value="daharki">Daharki</option>
+                                </select>
+                                <div class="text-danger" style="font-size: 12px;" id="error-job-city-2"></div>
+
+                                <!-- Input job area -->
+                                <select class="form-select form-select-bg-normal mt-2 w-50" name="jobArea2"
+                                     err-id="error-job-area-2" id="job-area-2" required
+                                    data-msg="Job Area is required.">
+                                    <option selected disabled>Area</option>
+                                    <option value="community">Community</option>
+                                    <option value="rural">Rural</option>
+                                    <option value="suburb">Suburb</option>
+                                    <option value="suburban">Suburban</option>
+                                    <option value="urban">Urban</option>
+                                </select>
+                                <div class="text-danger" style="font-size: 12px;" id="error-job-area-2"></div>
+
+                                <!-- Input job address -->
+                                <textarea name="address" id="" cols="30" rows="5" class="form-control mt-2 w-50"
+                                    placeholder="Address" err-id="error-job-address-2" id="job-address-2" required
+                                    data-msg="Job Address is required."></textarea>
+                                <div class="text-danger" style="font-size: 12px;" id="error-job-address-2"></div>
+                            </div>
+                            <div class="form-check ms-2">
+                                <input type="checkbox" name="sameAddressForInterview" class="form-check-input"
+                                    id="sameAddressForInterview" onclick="sameAddress()">
+                                <label for="sameAddressForInterview" class="form-check-label">Use same address for the
+                                    interview
+                                </label>
+                            </div>
+                        </li>
+
+                        <!-- Fourth Page -->
+                        <li class="li">
+                            <!-- Contract Presenet Checkbox -->
+                            <label class="label-job-form mt-3">Contract Present</label>
+                            <div class="form-group d-flex mt-2">
+                                <div>
+                                    <input class="btn-check" id="yesContractPresent" type="radio" name="contractPresent" value="yes">
+                                    <label for="yesContractPresent"
+                                        class="check-box-btn check-box-btn-left btn-outline-check-box">YES</label>
+                                </div>
+                                <div>
+                                    <input class="btn-check" id="noContractPresent" type="radio" name="contractPresent" value="no"
+                                        checked>
+                                    <label for="noContractPresent"
+                                        class="check-box-btn check-box-btn-right btn-outline-check-box">NO</label>
+                                </div>
+                            </div>
+
+                            <section class="d-flex flex-wrap justify-content-between d-none" id="contract">
+                                <section>
+                                    <!-- Contract Terms -->
+                                    <div class="form-group mt-2">
+                                        <label class="label-job-form mt-3">Contract Terms</label><br>
+                                        <textarea class="form-control" style="width: 521px;" name="contractTerms"
+                                            id="contractTerms" cols="30" rows="3" placeholder="..."></textarea>
+                                    </div>
+                                    <!-- Footer -->
+                                    <div class="form-group mt-2">
+                                        <label class="label-job-form mt-3">Footer</label><br>
+                                        <textarea class="form-control" style="width: 521px;" name="footer" id="footer"
+                                            cols="30" rows="3" placeholder="..."></textarea>
+                                    </div>
+                                </section>
+                                <div class="form-group mt-2">
+                                    <!-- User WebApp View -->
+                                    <label class="label-job-form mt-3">User WebApp View</label><br>
+                                    <div id="userWebAppView" class="container"
+                                        style="width: 521px; border-radius: 6px; border: 3px solid #e8e8e8; min-height: 450px; padding-top: 10px;">
+                                        <span id="showContractTerms"></span>
+                                        <span id="showFooter"></span>
+                                    </div>
+                                </div>
+                            </section>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+
+<!-- Scripts -->
+
+<script src="./../js/tinymce/js/tinymce/tinymce.min.js"></script>
+<script src="./../js/bootstrap.bundle.js"></script>
+<script src="./../js/jquery-3.6.1.min.js"></script>
+<script src="./../js/jFormslider.js"></script>
+<script src="./../js/formInputs.js"></script>
+<script src="./../js/job-posting-details.js"></script>
+<script src="./../js/list.min.js"></script>
+<script src="./../js/phoneNumber.js"></script>
+
+</html>
