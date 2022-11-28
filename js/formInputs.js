@@ -28,7 +28,7 @@ let l = 999;
       <img src="./../assests/icons/CounterMinus.svg" class="optionRemove">
        
   </div>
-  <div id="error-question${l}a-choose" class="text-danger"></div>
+  <span id="error-question${l}a-choose" class="text-danger"></span>
   `
       $(this).parent().parent().before(divv);
       l++;
